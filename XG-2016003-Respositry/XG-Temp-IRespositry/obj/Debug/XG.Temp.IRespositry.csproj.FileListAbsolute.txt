@@ -1,0 +1,14 @@
+D:\我的框架项目\MCV+EF模版框架\XG-Temp-IRespositry\bin\Debug\XG-Temp-IRespositry.dll
+D:\我的框架项目\MCV+EF模版框架\XG-Temp-IRespositry\bin\Debug\XG-Temp-IRespositry.pdb
+D:\我的框架项目\MCV+EF模版框架\XG-Temp-IRespositry\bin\Debug\XG.Temp.Model.dll
+D:\我的框架项目\MCV+EF模版框架\XG-Temp-IRespositry\bin\Debug\XG.Temp.Model.pdb
+D:\我的框架项目\MCV+EF模版框架\XG-Temp-IRespositry\obj\Debug\XG.Temp.IRespositry.csprojResolveAssemblyReference.cache
+D:\我的框架项目\MCV+EF模版框架\XG-Temp-IRespositry\obj\Debug\XG-Temp-IRespositry.dll
+D:\我的框架项目\MCV+EF模版框架\XG-Temp-IRespositry\obj\Debug\XG-Temp-IRespositry.pdb
+D:\我的框架项目\MCV+EF模版框架\XG-2016003-Respositry\XG-Temp-IRespositry\bin\Debug\XG-Temp-IRespositry.dll
+D:\我的框架项目\MCV+EF模版框架\XG-2016003-Respositry\XG-Temp-IRespositry\bin\Debug\XG-Temp-IRespositry.pdb
+D:\我的框架项目\MCV+EF模版框架\XG-2016003-Respositry\XG-Temp-IRespositry\obj\Debug\XG.Temp.IRespositry.csprojResolveAssemblyReference.cache
+D:\我的框架项目\MCV+EF模版框架\XG-2016003-Respositry\XG-Temp-IRespositry\obj\Debug\XG-Temp-IRespositry.dll
+D:\我的框架项目\MCV+EF模版框架\XG-2016003-Respositry\XG-Temp-IRespositry\obj\Debug\XG-Temp-IRespositry.pdb
+D:\我的框架项目\MCV+EF模版框架\XG-2016003-Respositry\XG-Temp-IRespositry\bin\Debug\XG.Temp.Model.dll
+D:\我的框架项目\MCV+EF模版框架\XG-2016003-Respositry\XG-Temp-IRespositry\bin\Debug\XG.Temp.Model.pdb
