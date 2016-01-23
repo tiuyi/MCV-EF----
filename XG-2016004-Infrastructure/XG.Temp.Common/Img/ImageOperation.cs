@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-namespace JDF.ERP.Common
+namespace XG.Temp.Common
 {
     /// <summary>
     /// Summary description for ImageOperation

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6811ef9fe9ed48f8a52fe9cf4e9a9c0c" Name="Diagram1">
+        <EntityTypeShape EntityType="NetTemplateModel.AdminAction" Width="1.625" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.AdminLoginLog" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.AdminPage" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.AdminPageAuth" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.AdminRole" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.AdminRoleAuth" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.AdminUser" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.AdminUserAuth" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.AdminUserDetail" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.Agent" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.AgentCustDetail" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.AgentCustType" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.AgentDetail" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.AgentType" Width="1.5" PointX="6.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.Area" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.AttachFile" Width="1.5" PointX="8.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.Bulletin" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.City" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.Company" Width="1.5" PointX="2.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.DataDictionary" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.Department" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.DictionaryGroup" Width="1.5" PointX="12.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.EmailHistory" Width="1.5" PointX="12.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.GouConfig" Width="1.5" PointX="4.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.GroupClient" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.Log4" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.Province" Width="1.5" PointX="14.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.SEMTemp" Width="1.5" PointX="6.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.SendEmailQueue" Width="1.5" PointX="8.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.SMSHistory" Width="1.5" PointX="14.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.WeiXinHis" Width="1.5" PointX="14.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NetTemplateModel.WeiXinRec" Width="1.5" PointX="10.75" PointY="15.75" IsExpanded="true" />
+        <AssociationConnector Association="NetTemplateModel.FK_AdminPageAuth_AdminPageAuth" />
+        <AssociationConnector Association="NetTemplateModel.FK_AdminRoleAuth_AdminPage" />
+        <AssociationConnector Association="NetTemplateModel.FK_AdminUserAuth_AdminPage" />
+        <AssociationConnector Association="NetTemplateModel.FK_AdminRoleAuth_AdminRole" />
+        <AssociationConnector Association="NetTemplateModel.FK_AdminUserAuth_AdminUser" />
+        <AssociationConnector Association="NetTemplateModel.FK_AdminUserDetail_AdminUser" />
+        <AssociationConnector Association="NetTemplateModel.FK_AgentDetail_Agent" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

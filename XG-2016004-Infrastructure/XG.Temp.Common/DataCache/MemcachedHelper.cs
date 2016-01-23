@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JDF.Finance.Common
+namespace XG.Temp.Common
 {
     public class MemcachedHelper
     {

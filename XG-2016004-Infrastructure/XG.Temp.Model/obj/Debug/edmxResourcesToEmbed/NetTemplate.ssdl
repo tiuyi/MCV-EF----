@@ -1,0 +1,566 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NetTemplateModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AdminAction">
+    <Key>
+      <PropertyRef Name="AdminActionID" />
+    </Key>
+    <Property Name="AdminActionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdminActionName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="AdminActionTag" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="AdminActionImgSrc" Type="varchar" MaxLength="50" />
+    <Property Name="AdminActionColor" Type="varchar" MaxLength="20" />
+    <Property Name="AdminActionRemark" Type="nvarchar" MaxLength="100" />
+    <Property Name="AdminActionRank" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdminLoginLog">
+    <Key>
+      <PropertyRef Name="AdminLoginLogID" />
+    </Key>
+    <Property Name="AdminLoginLogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LoginUserID" Type="int" Nullable="false" />
+    <Property Name="LoginDepartID" Type="int" Nullable="false" />
+    <Property Name="LoginRoleID" Type="int" Nullable="false" />
+    <Property Name="LoginUserName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="LoginDate" Type="datetime" Nullable="false" />
+    <Property Name="LoginIP" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdminPage">
+    <Key>
+      <PropertyRef Name="AdminPageID" />
+    </Key>
+    <Property Name="AdminPageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdminPageTitle" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="AdminPageURL" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="AdminPageParentID" Type="int" Nullable="false" />
+    <Property Name="AdminPageRemark" Type="nvarchar" MaxLength="100" />
+    <Property Name="AdminPageRank" Type="int" Nullable="false" />
+    <Property Name="AdminPageIsVisible" Type="int" Nullable="false" />
+    <Property Name="AdminPageIsLock" Type="int" Nullable="false" />
+    <Property Name="AdminPageImgSrc" Type="varchar" MaxLength="50" />
+    <Property Name="AdminPageColor" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="AdminPageAuth">
+    <Key>
+      <PropertyRef Name="AdminPageAuthID" />
+    </Key>
+    <Property Name="AdminPageAuthID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdminPageID" Type="int" Nullable="false" />
+    <Property Name="AdminPageRelID" Type="int" Nullable="false" />
+    <Property Name="AdminPageRelType" Type="int" Nullable="false" />
+    <Property Name="AdminPageDicType" Type="int" Nullable="false" />
+    <Property Name="AdminPageAuthIsLock" Type="bit" Nullable="false" />
+    <Property Name="AdminPageAuthRank" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdminRole">
+    <Key>
+      <PropertyRef Name="AdminRoleID" />
+    </Key>
+    <Property Name="AdminRoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentID" Type="int" Nullable="false" />
+    <Property Name="AdminRoleName" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdminRoleAuth">
+    <Key>
+      <PropertyRef Name="AdminRoleAuthID" />
+    </Key>
+    <Property Name="AdminRoleAuthID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdminRoleID" Type="int" Nullable="false" />
+    <Property Name="AdminPageID" Type="int" Nullable="false" />
+    <Property Name="AdminRoleRelID" Type="int" Nullable="false" />
+    <Property Name="AdminRoleRelType" Type="int" Nullable="false" />
+    <Property Name="AdminRoleDicType" Type="int" />
+  </EntityType>
+  <EntityType Name="AdminUser">
+    <Key>
+      <PropertyRef Name="AdminUserID" />
+    </Key>
+    <Property Name="AdminUserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdminUserName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="AdminUserNameA" Type="nvarchar" MaxLength="50" />
+    <Property Name="AdminUserNameF" Type="nvarchar" MaxLength="20" />
+    <Property Name="AdminUserNo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="AdminUserPass" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AgentID" Type="int" Nullable="false" />
+    <Property Name="DepartmentID" Type="int" Nullable="false" />
+    <Property Name="AdminRoleID" Type="int" Nullable="false" />
+    <Property Name="AdminUserStatus" Type="int" Nullable="false" />
+    <Property Name="AdminUserType" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdminUserAuth">
+    <Key>
+      <PropertyRef Name="AdminUserAuthID" />
+    </Key>
+    <Property Name="AdminUserAuthID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdminUserID" Type="int" Nullable="false" />
+    <Property Name="AdminPageID" Type="int" Nullable="false" />
+    <Property Name="AdminUserAuthRelID" Type="int" Nullable="false" />
+    <Property Name="AdminUserAuthRelType" Type="int" Nullable="false" />
+    <Property Name="AdminUserDicType" Type="int" Nullable="false" />
+    <Property Name="AdminUserAuthRank" Type="int" />
+    <Property Name="AdminUserAutFiexd" Type="int" />
+  </EntityType>
+  <EntityType Name="AdminUserDetail">
+    <Key>
+      <PropertyRef Name="AdminUserID" />
+    </Key>
+    <Property Name="AdminUserDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdminUserID" Type="int" Nullable="false" />
+    <Property Name="AdminUseTel" Type="varchar" MaxLength="20" />
+    <Property Name="AdminUseEmail" Type="varchar" MaxLength="20" />
+    <Property Name="AdminUserAddTime" Type="datetime" Nullable="false" />
+    <Property Name="AdminDisGroupID" Type="int" Nullable="false" />
+    <Property Name="WeiXinHao" Type="varchar" MaxLength="50" />
+    <Property Name="WeiXinOpenID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Agent">
+    <Key>
+      <PropertyRef Name="AgentID" />
+    </Key>
+    <Property Name="AgentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AgentNo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="AgentBigArea" Type="nvarchar" MaxLength="10" />
+    <Property Name="AgentProvID" Type="int" Nullable="false" />
+    <Property Name="AgentCityID" Type="int" Nullable="false" />
+    <Property Name="AgentName" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="AgentNameA" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="AgentNameF" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="AgentTypeCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="AgentIsUserJiamiGou" Type="int" Nullable="false" />
+    <Property Name="AgentJiaMiGouID" Type="varchar" MaxLength="20" />
+    <Property Name="AgentParentID" Type="int" />
+    <Property Name="AgentIsUsedSMS" Type="int" />
+    <Property Name="AgentIsSet" Type="int" />
+    <Property Name="AgentIntType" Type="int" />
+    <Property Name="AgentTeamBoss" Type="varchar" MaxLength="20" />
+    <Property Name="AgentIsDel" Type="int" Nullable="false" />
+    <Property Name="AgentStatus" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AgentCustDetail">
+    <Key>
+      <PropertyRef Name="AgentCustDetailID" />
+    </Key>
+    <Property Name="AgentCustDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AgentCustTypeID" Type="int" Nullable="false" />
+    <Property Name="AgentID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AgentCustType">
+    <Key>
+      <PropertyRef Name="AgentCustTypeID" />
+    </Key>
+    <Property Name="AgentCustTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AgentCusTypeName" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="AgentCusCreateDate" Type="datetime" Nullable="false" />
+    <Property Name="AdminUserID" Type="int" Nullable="false" />
+    <Property Name="DepartmentID" Type="int" />
+    <Property Name="AdminRoleID" Type="int" />
+    <Property Name="AgentCompanyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AgentCustUserType" Type="int" />
+    <Property Name="AgentReamrk" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="AgentDetail">
+    <Key>
+      <PropertyRef Name="ADAgentID" />
+    </Key>
+    <Property Name="AgentDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ADAgentID" Type="int" Nullable="false" />
+    <Property Name="AgentAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="AgentMailAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="AgentLinkMan" Type="nvarchar" MaxLength="10" />
+    <Property Name="AgentTelPhone" Type="varchar" MaxLength="11" />
+    <Property Name="AgentEmail" Type="varchar" MaxLength="50" />
+    <Property Name="AgentPhone" Type="varchar" MaxLength="13" />
+    <Property Name="AgentFax" Type="varchar" MaxLength="15" />
+    <Property Name="AgentPostCode" Type="varchar" MaxLength="10" />
+    <Property Name="AgentUserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AgentUpdateTime" Type="datetime" />
+    <Property Name="AgentIDCard" Type="varchar" MaxLength="50" />
+    <Property Name="AgentRemark" Type="nvarchar" MaxLength="200" />
+    <Property Name="AgentEndTime" Type="datetime" />
+    <Property Name="AgentEndName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AgentAddName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AgentAddTime" Type="datetime" Nullable="false" />
+    <Property Name="AgentVerifyTime" Type="datetime" />
+    <Property Name="AgentVerifyName" Type="nvarchar" MaxLength="100" />
+    <Property Name="AgentVerifyNote" Type="nvarchar" MaxLength="100" />
+    <Property Name="AgentIsAutoSend" Type="bit" />
+    <Property Name="AgentSendTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AgentType">
+    <Key>
+      <PropertyRef Name="AgentTypeID" />
+    </Key>
+    <Property Name="AgentTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AgentTypeName" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="AgentTypeCreateDate" Type="datetime" Nullable="false" />
+    <Property Name="AgentTypeCode" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="AreaID" />
+    </Key>
+    <Property Name="AreaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AreaName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="AreaNameF" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="AreaNameA" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="CityID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AttachFile">
+    <Key>
+      <PropertyRef Name="AFID" />
+    </Key>
+    <Property Name="AFID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AFObject" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AFSort" Type="int" Nullable="false" />
+    <Property Name="AFNewName" Type="varchar" MaxLength="100" />
+    <Property Name="AFName" Type="varchar" MaxLength="50" />
+    <Property Name="AFRank" Type="int" Nullable="false" />
+    <Property Name="AFIsMain" Type="int" Nullable="false" />
+    <Property Name="AFIsShow" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bulletin">
+    <Key>
+      <PropertyRef Name="BulletinID" />
+    </Key>
+    <Property Name="BulletinID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BullAddUserDepartID" Type="int" Nullable="false" />
+    <Property Name="BullAddUserRoleID" Type="int" Nullable="false" />
+    <Property Name="BullAddUserID" Type="int" Nullable="false" />
+    <Property Name="BullAddTime" Type="datetime" Nullable="false" />
+    <Property Name="BullTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="BullDes" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="CityNameF" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CityNameA" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="ProvinceID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="ComID" />
+    </Key>
+    <Property Name="ComID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ComNameA" Type="varchar" MaxLength="2000" />
+    <Property Name="ComNameF" Type="varchar" MaxLength="50" />
+    <Property Name="ComSName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ComLogo" Type="varchar" MaxLength="50" />
+    <Property Name="ComLegalPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="ComContactPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="ComPhone" Type="varchar" MaxLength="20" />
+    <Property Name="ComTelPhone" Type="varchar" MaxLength="20" />
+    <Property Name="ComEmail" Type="varchar" MaxLength="50" />
+    <Property Name="ComAddress" Type="nvarchar" MaxLength="200" />
+    <Property Name="ComBarcodeType" Type="varchar" MaxLength="20" />
+    <Property Name="ComStatus" Type="int" Nullable="false" />
+    <Property Name="ComRemark" Type="nvarchar" MaxLength="2000" />
+    <Property Name="ComSubRemark" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ComAddUserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ComAddTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DataDictionary">
+    <Key>
+      <PropertyRef Name="DataDictionaryID" />
+    </Key>
+    <Property Name="DataDictionaryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DictionaryGroupID" Type="int" Nullable="false" />
+    <Property Name="DataTableName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="DictionaryCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DictionaryName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DictinaryCodeDIY" Type="varchar" MaxLength="50" />
+    <Property Name="DictionaryRank" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentNo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ParDepartmentID" Type="int" Nullable="false" />
+    <Property Name="DepartmentName" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="DepartmentUsername" Type="nvarchar" MaxLength="10" />
+    <Property Name="DepartmentTel" Type="varchar" MaxLength="20" />
+    <Property Name="DepartmentFax" Type="varchar" MaxLength="20" />
+    <Property Name="DepartmentStatus" Type="int" Nullable="false" />
+    <Property Name="DepartmentRemark" Type="nvarchar" MaxLength="200" />
+    <Property Name="DepartmentArray" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="DictionaryGroup">
+    <Key>
+      <PropertyRef Name="DictionaryGroupID" />
+    </Key>
+    <Property Name="DictionaryGroupID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DictionaryGroupName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DictionaryGroupRemark" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmailHistory">
+    <Key>
+      <PropertyRef Name="EmailHistoryID" />
+    </Key>
+    <Property Name="EmailHistoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmailTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmailUserID" Type="int" Nullable="false" />
+    <Property Name="EmailAddress" Type="text" />
+    <Property Name="SEMTemplateID" Type="int" Nullable="false" />
+    <Property Name="EmailContent" Type="text" Nullable="false" />
+    <Property Name="EmailSendStatus" Type="int" Nullable="false" />
+    <Property Name="EmailSendTime" Type="datetime" Nullable="false" />
+    <Property Name="EmailRemarks" Type="nvarchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="GouConfig">
+    <Key>
+      <PropertyRef Name="GCID" />
+    </Key>
+    <Property Name="GCID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GAgentID" Type="int" Nullable="false" />
+    <Property Name="GAdminUserID" Type="int" Nullable="false" />
+    <Property Name="GAdminUserNo" Type="int" Nullable="false" />
+    <Property Name="GID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="GStatus" Type="int" Nullable="false" />
+    <Property Name="GAddTime" Type="datetime" Nullable="false" />
+    <Property Name="GAddUserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="GRemark" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="GroupClient">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ObjectType" Type="int" />
+    <Property Name="GroupName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GroupDes" Type="nvarchar" MaxLength="200" />
+    <Property Name="ClientIds" Type="text" />
+  </EntityType>
+  <EntityType Name="Log4">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AddDate" Type="datetime" Nullable="false" />
+    <Property Name="AddThread" Type="varchar" MaxLength="10" />
+    <Property Name="AddLevel" Type="varchar" MaxLength="10" />
+    <Property Name="Logger" Type="varchar" MaxLength="20" />
+    <Property Name="Message" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="ProvinceID" />
+    </Key>
+    <Property Name="ProvinceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProName" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ProNameA" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="ProNameF" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SEMTemp">
+    <Key>
+      <PropertyRef Name="SEMTempID" />
+    </Key>
+    <Property Name="SEMTempID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SEMTempTitle" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SMSTemplate" Type="text" />
+    <Property Name="EmailTemplate" Type="text" />
+    <Property Name="SEMIsSystem" Type="int" Nullable="false" />
+    <Property Name="MessageTemplate" Type="text" />
+    <Property Name="SEMCode" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SendEmailQueue">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientID" Type="int" />
+    <Property Name="ClientEmail" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="int" />
+    <Property Name="QueueType" Type="int" />
+    <Property Name="SendDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SMSHistory">
+    <Key>
+      <PropertyRef Name="SMSHistoryID" />
+    </Key>
+    <Property Name="SMSHistoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SMSTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SMSUserID" Type="int" Nullable="false" />
+    <Property Name="SMSTelNo" Type="text" Nullable="false" />
+    <Property Name="SEMTemplateID" Type="int" Nullable="false" />
+    <Property Name="SMSContent" Type="text" Nullable="false" />
+    <Property Name="SMSSendStatus" Type="int" Nullable="false" />
+    <Property Name="SMSSendTime" Type="datetime" Nullable="false" />
+    <Property Name="SMSTypeID" Type="int" />
+  </EntityType>
+  <EntityType Name="WeiXinHis">
+    <Key>
+      <PropertyRef Name="WXID" />
+    </Key>
+    <Property Name="WXID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WXRandNo" Type="varchar" MaxLength="10" />
+    <Property Name="WXAgentID" Type="int" Nullable="false" />
+    <Property Name="WXSendUserName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="WXRecUserName" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="WXRecOpenID" Type="varchar" MaxLength="4000" />
+    <Property Name="WXStatus" Type="int" Nullable="false" />
+    <Property Name="WXAddTime" Type="datetime" Nullable="false" />
+    <Property Name="WXDetail" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="WXRemark" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="WeiXinRec">
+    <Key>
+      <PropertyRef Name="WXRID" />
+    </Key>
+    <Property Name="WXRID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WXRAgentID" Type="int" Nullable="false" />
+    <Property Name="WXRUserID" Type="int" Nullable="false" />
+    <Property Name="WXRStatus" Type="int" Nullable="false" />
+    <Property Name="WXRType" Type="int" />
+  </EntityType>
+  <Association Name="FK_AdminPageAuth_AdminPageAuth">
+    <End Role="AdminPage" Type="Self.AdminPage" Multiplicity="1" />
+    <End Role="AdminPageAuth" Type="Self.AdminPageAuth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdminPage">
+        <PropertyRef Name="AdminPageID" />
+      </Principal>
+      <Dependent Role="AdminPageAuth">
+        <PropertyRef Name="AdminPageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdminRoleAuth_AdminPage">
+    <End Role="AdminPage" Type="Self.AdminPage" Multiplicity="1" />
+    <End Role="AdminRoleAuth" Type="Self.AdminRoleAuth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdminPage">
+        <PropertyRef Name="AdminPageID" />
+      </Principal>
+      <Dependent Role="AdminRoleAuth">
+        <PropertyRef Name="AdminPageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdminRoleAuth_AdminRole">
+    <End Role="AdminRole" Type="Self.AdminRole" Multiplicity="1" />
+    <End Role="AdminRoleAuth" Type="Self.AdminRoleAuth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdminRole">
+        <PropertyRef Name="AdminRoleID" />
+      </Principal>
+      <Dependent Role="AdminRoleAuth">
+        <PropertyRef Name="AdminRoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdminUserAuth_AdminPage">
+    <End Role="AdminPage" Type="Self.AdminPage" Multiplicity="1" />
+    <End Role="AdminUserAuth" Type="Self.AdminUserAuth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdminPage">
+        <PropertyRef Name="AdminPageID" />
+      </Principal>
+      <Dependent Role="AdminUserAuth">
+        <PropertyRef Name="AdminPageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdminUserAuth_AdminUser">
+    <End Role="AdminUser" Type="Self.AdminUser" Multiplicity="1" />
+    <End Role="AdminUserAuth" Type="Self.AdminUserAuth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdminUser">
+        <PropertyRef Name="AdminUserID" />
+      </Principal>
+      <Dependent Role="AdminUserAuth">
+        <PropertyRef Name="AdminUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdminUserDetail_AdminUser">
+    <End Role="AdminUser" Type="Self.AdminUser" Multiplicity="1" />
+    <End Role="AdminUserDetail" Type="Self.AdminUserDetail" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="AdminUser">
+        <PropertyRef Name="AdminUserID" />
+      </Principal>
+      <Dependent Role="AdminUserDetail">
+        <PropertyRef Name="AdminUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AgentDetail_Agent">
+    <End Role="Agent" Type="Self.Agent" Multiplicity="1" />
+    <End Role="AgentDetail" Type="Self.AgentDetail" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Agent">
+        <PropertyRef Name="AgentID" />
+      </Principal>
+      <Dependent Role="AgentDetail">
+        <PropertyRef Name="ADAgentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NetTemplateModelStoreContainer">
+    <EntitySet Name="AdminAction" EntityType="Self.AdminAction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdminLoginLog" EntityType="Self.AdminLoginLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdminPage" EntityType="Self.AdminPage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdminPageAuth" EntityType="Self.AdminPageAuth" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdminRole" EntityType="Self.AdminRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdminRoleAuth" EntityType="Self.AdminRoleAuth" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdminUser" EntityType="Self.AdminUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdminUserAuth" EntityType="Self.AdminUserAuth" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdminUserDetail" EntityType="Self.AdminUserDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Agent" EntityType="Self.Agent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AgentCustDetail" EntityType="Self.AgentCustDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AgentCustType" EntityType="Self.AgentCustType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AgentDetail" EntityType="Self.AgentDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AgentType" EntityType="Self.AgentType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AttachFile" EntityType="Self.AttachFile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bulletin" EntityType="Self.Bulletin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DataDictionary" EntityType="Self.DataDictionary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DictionaryGroup" EntityType="Self.DictionaryGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmailHistory" EntityType="Self.EmailHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GouConfig" EntityType="Self.GouConfig" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupClient" EntityType="Self.GroupClient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Log4" EntityType="Self.Log4" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Province" EntityType="Self.Province" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SEMTemp" EntityType="Self.SEMTemp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SendEmailQueue" EntityType="Self.SendEmailQueue" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SMSHistory" EntityType="Self.SMSHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WeiXinHis" EntityType="Self.WeiXinHis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WeiXinRec" EntityType="Self.WeiXinRec" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AdminPageAuth_AdminPageAuth" Association="Self.FK_AdminPageAuth_AdminPageAuth">
+      <End Role="AdminPage" EntitySet="AdminPage" />
+      <End Role="AdminPageAuth" EntitySet="AdminPageAuth" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdminRoleAuth_AdminPage" Association="Self.FK_AdminRoleAuth_AdminPage">
+      <End Role="AdminPage" EntitySet="AdminPage" />
+      <End Role="AdminRoleAuth" EntitySet="AdminRoleAuth" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdminRoleAuth_AdminRole" Association="Self.FK_AdminRoleAuth_AdminRole">
+      <End Role="AdminRole" EntitySet="AdminRole" />
+      <End Role="AdminRoleAuth" EntitySet="AdminRoleAuth" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdminUserAuth_AdminPage" Association="Self.FK_AdminUserAuth_AdminPage">
+      <End Role="AdminPage" EntitySet="AdminPage" />
+      <End Role="AdminUserAuth" EntitySet="AdminUserAuth" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdminUserAuth_AdminUser" Association="Self.FK_AdminUserAuth_AdminUser">
+      <End Role="AdminUser" EntitySet="AdminUser" />
+      <End Role="AdminUserAuth" EntitySet="AdminUserAuth" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdminUserDetail_AdminUser" Association="Self.FK_AdminUserDetail_AdminUser">
+      <End Role="AdminUser" EntitySet="AdminUser" />
+      <End Role="AdminUserDetail" EntitySet="AdminUserDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AgentDetail_Agent" Association="Self.FK_AgentDetail_Agent">
+      <End Role="Agent" EntitySet="Agent" />
+      <End Role="AgentDetail" EntitySet="AgentDetail" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

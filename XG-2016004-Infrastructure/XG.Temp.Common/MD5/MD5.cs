@@ -4,7 +4,7 @@ using System.Text;
 using System.IO;
 using System.Security.Cryptography;
 
-namespace Common
+namespace XG.Temp.Common
 {
     /// <summary>
     /// 类名：MD5

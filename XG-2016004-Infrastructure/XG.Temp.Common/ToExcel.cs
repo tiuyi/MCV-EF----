@@ -19,7 +19,7 @@ using System.Web.Script.Serialization;
 
 
 
-namespace JDF.Finance.Common
+namespace XG.Temp.Common
 {
     /// <summary>
     /// 導出Excel

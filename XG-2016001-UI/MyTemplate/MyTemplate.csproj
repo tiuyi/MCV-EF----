@@ -242,9 +242,9 @@
       <Project>{a9331129-7093-4929-a50a-ac04d5709a48}</Project>
       <Name>XG.Temp.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UI-Helper\UI-Helper.csproj">
+    <ProjectReference Include="..\UI-Helper\XG.Temp.Helper.csproj">
       <Project>{bf3d4d27-e084-4e8a-99bc-2fbc9b9eb51f}</Project>
-      <Name>UI-Helper</Name>
+      <Name>XG.Temp.Helper</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\XG-2016002-Services\XG-Temp-Iservices\XG.Temp.IServices.csproj">
       <Project>{c55acd49-2672-4a91-aea2-2595bf1b34b3}</Project>

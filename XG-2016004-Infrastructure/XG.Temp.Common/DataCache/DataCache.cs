@@ -3,7 +3,7 @@ using System.Collections;
 using System.Web;
 using System.Web.Caching;
 
-namespace JDF.Finance.Common
+namespace XG.Temp.Common
 {
 
     /// <summary>

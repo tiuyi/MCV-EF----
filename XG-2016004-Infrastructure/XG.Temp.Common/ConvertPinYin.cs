@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Xqk.Chinese;
 
-namespace JDF.Finance.Common
+namespace XG.Temp.Common
 {
    public class ConvertPinYin
     {

@@ -1,0 +1,53 @@
+﻿<#@ template language="C#" debug="false" hostspecific="true"#>
+<#@ include file="EF.Utility.CS.ttinclude"#>
+<#@ output extension=".cs"#>
+<#
+CodeGenerationTools code = new CodeGenerationTools(this);
+MetadataLoader loader = new MetadataLoader(this);
+CodeRegion region = new CodeRegion(this, 1);
+MetadataTools ef = new MetadataTools(this);
+string inputFile = @"..\..\XG-2016004-Infrastructure\XG.Temp.Model\NetTemplate.edmx";
+EdmItemCollection ItemCollection = loader.CreateEdmItemCollection(inputFile);
+string namespaceName = code.VsNamespaceSuggestion();
+EntityFrameworkTemplateFileManager fileManager = EntityFrameworkTemplateFileManager.Create(this);
+#>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using JDF.Finance.IServices;
+
+namespace XG.Temp.Services
+{
+	public partial class BLLSession:IServices.IBLLSession
+    {
+<#
+int version=0;
+// Emit Entity Types
+foreach (EntityType entity in ItemCollection.GetItems<EntityType>().OrderBy(e => e.Name))
+{
+    //fileManager.StartNewFile(entity.Name + "RepositoryExt.cs");
+    //BeginNamespace(namespaceName, code);
+    version++;
+#>
+		#region <#=version.ToString("00") #> 业务接口 I<#=entity.Name#>Services
+		I<#=entity.Name#>Services i<#=entity.Name#>Services;
+		public I<#=entity.Name#>Services I<#=entity.Name#>Services
+		{
+			get
+			{
+				if(i<#=entity.Name#>Services==null)
+					i<#=entity.Name#>Services= new <#=entity.Name#>Services();
+				return i<#=entity.Name#>Services;
+			}
+			set
+			{
+				i<#=entity.Name#>Services= value;
+			}
+		}
+		#endregion
+
+<#}#>
+    }
+
+}

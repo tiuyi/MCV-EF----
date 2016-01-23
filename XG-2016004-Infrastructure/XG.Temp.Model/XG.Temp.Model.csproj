@@ -30,8 +30,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,8 +50,369 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="AdminAction.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLoginLog.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPageAuth.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdminRole.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdminRoleAuth.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUser.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUserAuth.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUserDetail.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Agent.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AgentCustDetail.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AgentCustType.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AgentDetail.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AgentType.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ApiModel\ActionModel.cs" />
+    <Compile Include="ApiModel\AttrModel.cs" />
+    <Compile Include="ApiModel\OrgModel.cs" />
+    <Compile Include="ApiModel\PageModel.cs" />
+    <Compile Include="Area.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AttachFile.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bulletin.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Company.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataDictionary.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DictionaryGroup.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmailHistory.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EAdminAction.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EAdminLoginLog.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EAdminPage.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EAdminPageAuth.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EAdminRole.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EAdminRoleAuth.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EAdminUser.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EAdminUserAuth.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EAdminUserDetail.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EAgent.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EAgentCustDetail.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EAgentCustType.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EAgentDetail.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EAgentType.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EArea.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EAttachFile.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EBulletin.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\ECity.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\ECompany.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EDataDictionary.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EDepartment.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EDictionaryGroup.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EEmailHistory.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EGouConfig.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EGroupClient.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\ELog4.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EProvince.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\ESEMTemp.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\ESendEmailQueue.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\ESMSHistory.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EWeiXinHis.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\EWeiXinRec.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EModel\JDF_Finance1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\JDF_Finance1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEBaseModel.cs" />
+    <Compile Include="FormatModel\AdminUser.cs" />
+    <Compile Include="FormatModel\AjaxCallBackModel.cs" />
+    <Compile Include="FormatModel\AjaxSearchModel.cs" />
+    <Compile Include="FormatModel\ApplicationSession.cs" />
+    <Compile Include="FormatModel\CateGroup.cs" />
+    <Compile Include="FormatModel\OrderModel.cs" />
+    <Compile Include="FormatModel\SubmitRowData.cs" />
+    <Compile Include="FormatModel\TreeData.cs" />
+    <Compile Include="GouConfig.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GroupClient.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Log4.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NetTemplate.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NetTemplate.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NetTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NetTemplate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NetTemplate.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Province.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEAdminAction.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEAdminLoginLog.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEAdminPage.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEAdminPageAuth.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEAdminRole.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEAdminRoleAuth.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEAdminUser.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEAdminUserAuth.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEAdminUserDetail.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEAgent.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEAgentCustDetail.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEAgentCustType.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEAgentDetail.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEAgentType.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEArea.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEAttachFile.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEBulletin.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SECity.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SECompany.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEDataDictionary.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEDepartment.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEDictionaryGroup.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEEmailHistory.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEGouConfig.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEGroupClient.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SELog4.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEProvince.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SESEMTemp.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SESendEmailQueue.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SESMSHistory.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEWeiXinHis.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEModel\SEWeiXinRec.cs">
+      <DependentUpon>JDF_Finance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEMTemp.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SendEmailQueue.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SMSHistory.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinHis.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WeiXinRec.cs">
+      <DependentUpon>NetTemplate.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="EModel\JDF_Finance.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>JDF_Finance1.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="NetTemplate.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NetTemplate.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="NetTemplate.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NetTemplate.edmx</DependentUpon>
+      <LastGenOutput>NetTemplate.Context.cs</LastGenOutput>
+    </None>
+    <None Include="NetTemplate.edmx.diagram">
+      <DependentUpon>NetTemplate.edmx</DependentUpon>
+    </None>
+    <None Include="NetTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NetTemplate.edmx</DependentUpon>
+      <LastGenOutput>NetTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="SEModel\JDF_Finance.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>JDF_Finance1.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EModelExtension\" />
+    <Folder Include="SEModelExtension\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JDF.Finance.Common
+namespace XG.Temp.Common
 {
     public class SearchHelper
     {

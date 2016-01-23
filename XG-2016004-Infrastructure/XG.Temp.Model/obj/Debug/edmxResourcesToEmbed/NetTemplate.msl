@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NetTemplateModelStoreContainer" CdmEntityContainer="NetTemplateEntities">
+    <EntitySetMapping Name="AdminAction">
+      <EntityTypeMapping TypeName="NetTemplateModel.AdminAction">
+        <MappingFragment StoreEntitySet="AdminAction">
+          <ScalarProperty Name="AdminActionID" ColumnName="AdminActionID" />
+          <ScalarProperty Name="AdminActionName" ColumnName="AdminActionName" />
+          <ScalarProperty Name="AdminActionTag" ColumnName="AdminActionTag" />
+          <ScalarProperty Name="AdminActionImgSrc" ColumnName="AdminActionImgSrc" />
+          <ScalarProperty Name="AdminActionColor" ColumnName="AdminActionColor" />
+          <ScalarProperty Name="AdminActionRemark" ColumnName="AdminActionRemark" />
+          <ScalarProperty Name="AdminActionRank" ColumnName="AdminActionRank" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdminLoginLog">
+      <EntityTypeMapping TypeName="NetTemplateModel.AdminLoginLog">
+        <MappingFragment StoreEntitySet="AdminLoginLog">
+          <ScalarProperty Name="AdminLoginLogID" ColumnName="AdminLoginLogID" />
+          <ScalarProperty Name="LoginUserID" ColumnName="LoginUserID" />
+          <ScalarProperty Name="LoginDepartID" ColumnName="LoginDepartID" />
+          <ScalarProperty Name="LoginRoleID" ColumnName="LoginRoleID" />
+          <ScalarProperty Name="LoginUserName" ColumnName="LoginUserName" />
+          <ScalarProperty Name="LoginDate" ColumnName="LoginDate" />
+          <ScalarProperty Name="LoginIP" ColumnName="LoginIP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdminPage">
+      <EntityTypeMapping TypeName="NetTemplateModel.AdminPage">
+        <MappingFragment StoreEntitySet="AdminPage">
+          <ScalarProperty Name="AdminPageID" ColumnName="AdminPageID" />
+          <ScalarProperty Name="AdminPageTitle" ColumnName="AdminPageTitle" />
+          <ScalarProperty Name="AdminPageURL" ColumnName="AdminPageURL" />
+          <ScalarProperty Name="AdminPageParentID" ColumnName="AdminPageParentID" />
+          <ScalarProperty Name="AdminPageRemark" ColumnName="AdminPageRemark" />
+          <ScalarProperty Name="AdminPageRank" ColumnName="AdminPageRank" />
+          <ScalarProperty Name="AdminPageIsVisible" ColumnName="AdminPageIsVisible" />
+          <ScalarProperty Name="AdminPageIsLock" ColumnName="AdminPageIsLock" />
+          <ScalarProperty Name="AdminPageImgSrc" ColumnName="AdminPageImgSrc" />
+          <ScalarProperty Name="AdminPageColor" ColumnName="AdminPageColor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdminPageAuth">
+      <EntityTypeMapping TypeName="NetTemplateModel.AdminPageAuth">
+        <MappingFragment StoreEntitySet="AdminPageAuth">
+          <ScalarProperty Name="AdminPageAuthID" ColumnName="AdminPageAuthID" />
+          <ScalarProperty Name="AdminPageID" ColumnName="AdminPageID" />
+          <ScalarProperty Name="AdminPageRelID" ColumnName="AdminPageRelID" />
+          <ScalarProperty Name="AdminPageRelType" ColumnName="AdminPageRelType" />
+          <ScalarProperty Name="AdminPageDicType" ColumnName="AdminPageDicType" />
+          <ScalarProperty Name="AdminPageAuthIsLock" ColumnName="AdminPageAuthIsLock" />
+          <ScalarProperty Name="AdminPageAuthRank" ColumnName="AdminPageAuthRank" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdminRole">
+      <EntityTypeMapping TypeName="NetTemplateModel.AdminRole">
+        <MappingFragment StoreEntitySet="AdminRole">
+          <ScalarProperty Name="AdminRoleID" ColumnName="AdminRoleID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="AdminRoleName" ColumnName="AdminRoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdminRoleAuth">
+      <EntityTypeMapping TypeName="NetTemplateModel.AdminRoleAuth">
+        <MappingFragment StoreEntitySet="AdminRoleAuth">
+          <ScalarProperty Name="AdminRoleAuthID" ColumnName="AdminRoleAuthID" />
+          <ScalarProperty Name="AdminRoleID" ColumnName="AdminRoleID" />
+          <ScalarProperty Name="AdminPageID" ColumnName="AdminPageID" />
+          <ScalarProperty Name="AdminRoleRelID" ColumnName="AdminRoleRelID" />
+          <ScalarProperty Name="AdminRoleRelType" ColumnName="AdminRoleRelType" />
+          <ScalarProperty Name="AdminRoleDicType" ColumnName="AdminRoleDicType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdminUser">
+      <EntityTypeMapping TypeName="NetTemplateModel.AdminUser">
+        <MappingFragment StoreEntitySet="AdminUser">
+          <ScalarProperty Name="AdminUserID" ColumnName="AdminUserID" />
+          <ScalarProperty Name="AdminUserName" ColumnName="AdminUserName" />
+          <ScalarProperty Name="AdminUserNameA" ColumnName="AdminUserNameA" />
+          <ScalarProperty Name="AdminUserNameF" ColumnName="AdminUserNameF" />
+          <ScalarProperty Name="AdminUserNo" ColumnName="AdminUserNo" />
+          <ScalarProperty Name="AdminUserPass" ColumnName="AdminUserPass" />
+          <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="AdminRoleID" ColumnName="AdminRoleID" />
+          <ScalarProperty Name="AdminUserStatus" ColumnName="AdminUserStatus" />
+          <ScalarProperty Name="AdminUserType" ColumnName="AdminUserType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdminUserAuth">
+      <EntityTypeMapping TypeName="NetTemplateModel.AdminUserAuth">
+        <MappingFragment StoreEntitySet="AdminUserAuth">
+          <ScalarProperty Name="AdminUserAuthID" ColumnName="AdminUserAuthID" />
+          <ScalarProperty Name="AdminUserID" ColumnName="AdminUserID" />
+          <ScalarProperty Name="AdminPageID" ColumnName="AdminPageID" />
+          <ScalarProperty Name="AdminUserAuthRelID" ColumnName="AdminUserAuthRelID" />
+          <ScalarProperty Name="AdminUserAuthRelType" ColumnName="AdminUserAuthRelType" />
+          <ScalarProperty Name="AdminUserDicType" ColumnName="AdminUserDicType" />
+          <ScalarProperty Name="AdminUserAuthRank" ColumnName="AdminUserAuthRank" />
+          <ScalarProperty Name="AdminUserAutFiexd" ColumnName="AdminUserAutFiexd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdminUserDetail">
+      <EntityTypeMapping TypeName="NetTemplateModel.AdminUserDetail">
+        <MappingFragment StoreEntitySet="AdminUserDetail">
+          <ScalarProperty Name="AdminUserDetailID" ColumnName="AdminUserDetailID" />
+          <ScalarProperty Name="AdminUserID" ColumnName="AdminUserID" />
+          <ScalarProperty Name="AdminUseTel" ColumnName="AdminUseTel" />
+          <ScalarProperty Name="AdminUseEmail" ColumnName="AdminUseEmail" />
+          <ScalarProperty Name="AdminUserAddTime" ColumnName="AdminUserAddTime" />
+          <ScalarProperty Name="AdminDisGroupID" ColumnName="AdminDisGroupID" />
+          <ScalarProperty Name="WeiXinHao" ColumnName="WeiXinHao" />
+          <ScalarProperty Name="WeiXinOpenID" ColumnName="WeiXinOpenID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Agent">
+      <EntityTypeMapping TypeName="NetTemplateModel.Agent">
+        <MappingFragment StoreEntitySet="Agent">
+          <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+          <ScalarProperty Name="AgentNo" ColumnName="AgentNo" />
+          <ScalarProperty Name="AgentBigArea" ColumnName="AgentBigArea" />
+          <ScalarProperty Name="AgentProvID" ColumnName="AgentProvID" />
+          <ScalarProperty Name="AgentCityID" ColumnName="AgentCityID" />
+          <ScalarProperty Name="AgentName" ColumnName="AgentName" />
+          <ScalarProperty Name="AgentNameA" ColumnName="AgentNameA" />
+          <ScalarProperty Name="AgentNameF" ColumnName="AgentNameF" />
+          <ScalarProperty Name="AgentTypeCode" ColumnName="AgentTypeCode" />
+          <ScalarProperty Name="AgentIsUserJiamiGou" ColumnName="AgentIsUserJiamiGou" />
+          <ScalarProperty Name="AgentJiaMiGouID" ColumnName="AgentJiaMiGouID" />
+          <ScalarProperty Name="AgentParentID" ColumnName="AgentParentID" />
+          <ScalarProperty Name="AgentIsUsedSMS" ColumnName="AgentIsUsedSMS" />
+          <ScalarProperty Name="AgentIsSet" ColumnName="AgentIsSet" />
+          <ScalarProperty Name="AgentIntType" ColumnName="AgentIntType" />
+          <ScalarProperty Name="AgentTeamBoss" ColumnName="AgentTeamBoss" />
+          <ScalarProperty Name="AgentIsDel" ColumnName="AgentIsDel" />
+          <ScalarProperty Name="AgentStatus" ColumnName="AgentStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AgentCustDetail">
+      <EntityTypeMapping TypeName="NetTemplateModel.AgentCustDetail">
+        <MappingFragment StoreEntitySet="AgentCustDetail">
+          <ScalarProperty Name="AgentCustDetailID" ColumnName="AgentCustDetailID" />
+          <ScalarProperty Name="AgentCustTypeID" ColumnName="AgentCustTypeID" />
+          <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AgentCustType">
+      <EntityTypeMapping TypeName="NetTemplateModel.AgentCustType">
+        <MappingFragment StoreEntitySet="AgentCustType">
+          <ScalarProperty Name="AgentCustTypeID" ColumnName="AgentCustTypeID" />
+          <ScalarProperty Name="AgentCusTypeName" ColumnName="AgentCusTypeName" />
+          <ScalarProperty Name="AgentCusCreateDate" ColumnName="AgentCusCreateDate" />
+          <ScalarProperty Name="AdminUserID" ColumnName="AdminUserID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="AdminRoleID" ColumnName="AdminRoleID" />
+          <ScalarProperty Name="AgentCompanyName" ColumnName="AgentCompanyName" />
+          <ScalarProperty Name="AgentCustUserType" ColumnName="AgentCustUserType" />
+          <ScalarProperty Name="AgentReamrk" ColumnName="AgentReamrk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AgentDetail">
+      <EntityTypeMapping TypeName="NetTemplateModel.AgentDetail">
+        <MappingFragment StoreEntitySet="AgentDetail">
+          <ScalarProperty Name="AgentDetailID" ColumnName="AgentDetailID" />
+          <ScalarProperty Name="ADAgentID" ColumnName="ADAgentID" />
+          <ScalarProperty Name="AgentAddress" ColumnName="AgentAddress" />
+          <ScalarProperty Name="AgentMailAddress" ColumnName="AgentMailAddress" />
+          <ScalarProperty Name="AgentLinkMan" ColumnName="AgentLinkMan" />
+          <ScalarProperty Name="AgentTelPhone" ColumnName="AgentTelPhone" />
+          <ScalarProperty Name="AgentEmail" ColumnName="AgentEmail" />
+          <ScalarProperty Name="AgentPhone" ColumnName="AgentPhone" />
+          <ScalarProperty Name="AgentFax" ColumnName="AgentFax" />
+          <ScalarProperty Name="AgentPostCode" ColumnName="AgentPostCode" />
+          <ScalarProperty Name="AgentUserName" ColumnName="AgentUserName" />
+          <ScalarProperty Name="AgentUpdateTime" ColumnName="AgentUpdateTime" />
+          <ScalarProperty Name="AgentIDCard" ColumnName="AgentIDCard" />
+          <ScalarProperty Name="AgentRemark" ColumnName="AgentRemark" />
+          <ScalarProperty Name="AgentEndTime" ColumnName="AgentEndTime" />
+          <ScalarProperty Name="AgentEndName" ColumnName="AgentEndName" />
+          <ScalarProperty Name="AgentAddName" ColumnName="AgentAddName" />
+          <ScalarProperty Name="AgentAddTime" ColumnName="AgentAddTime" />
+          <ScalarProperty Name="AgentVerifyTime" ColumnName="AgentVerifyTime" />
+          <ScalarProperty Name="AgentVerifyName" ColumnName="AgentVerifyName" />
+          <ScalarProperty Name="AgentVerifyNote" ColumnName="AgentVerifyNote" />
+          <ScalarProperty Name="AgentIsAutoSend" ColumnName="AgentIsAutoSend" />
+          <ScalarProperty Name="AgentSendTime" ColumnName="AgentSendTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AgentType">
+      <EntityTypeMapping TypeName="NetTemplateModel.AgentType">
+        <MappingFragment StoreEntitySet="AgentType">
+          <ScalarProperty Name="AgentTypeID" ColumnName="AgentTypeID" />
+          <ScalarProperty Name="AgentTypeName" ColumnName="AgentTypeName" />
+          <ScalarProperty Name="AgentTypeCreateDate" ColumnName="AgentTypeCreateDate" />
+          <ScalarProperty Name="AgentTypeCode" ColumnName="AgentTypeCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Area">
+      <EntityTypeMapping TypeName="NetTemplateModel.Area">
+        <MappingFragment StoreEntitySet="Area">
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="AreaNameF" ColumnName="AreaNameF" />
+          <ScalarProperty Name="AreaNameA" ColumnName="AreaNameA" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AttachFile">
+      <EntityTypeMapping TypeName="NetTemplateModel.AttachFile">
+        <MappingFragment StoreEntitySet="AttachFile">
+          <ScalarProperty Name="AFID" ColumnName="AFID" />
+          <ScalarProperty Name="AFObject" ColumnName="AFObject" />
+          <ScalarProperty Name="AFSort" ColumnName="AFSort" />
+          <ScalarProperty Name="AFNewName" ColumnName="AFNewName" />
+          <ScalarProperty Name="AFName" ColumnName="AFName" />
+          <ScalarProperty Name="AFRank" ColumnName="AFRank" />
+          <ScalarProperty Name="AFIsMain" ColumnName="AFIsMain" />
+          <ScalarProperty Name="AFIsShow" ColumnName="AFIsShow" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bulletin">
+      <EntityTypeMapping TypeName="NetTemplateModel.Bulletin">
+        <MappingFragment StoreEntitySet="Bulletin">
+          <ScalarProperty Name="BulletinID" ColumnName="BulletinID" />
+          <ScalarProperty Name="BullAddUserDepartID" ColumnName="BullAddUserDepartID" />
+          <ScalarProperty Name="BullAddUserRoleID" ColumnName="BullAddUserRoleID" />
+          <ScalarProperty Name="BullAddUserID" ColumnName="BullAddUserID" />
+          <ScalarProperty Name="BullAddTime" ColumnName="BullAddTime" />
+          <ScalarProperty Name="BullTitle" ColumnName="BullTitle" />
+          <ScalarProperty Name="BullDes" ColumnName="BullDes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="City">
+      <EntityTypeMapping TypeName="NetTemplateModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CityNameF" ColumnName="CityNameF" />
+          <ScalarProperty Name="CityNameA" ColumnName="CityNameA" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Company">
+      <EntityTypeMapping TypeName="NetTemplateModel.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="ComID" ColumnName="ComID" />
+          <ScalarProperty Name="ComName" ColumnName="ComName" />
+          <ScalarProperty Name="ComNameA" ColumnName="ComNameA" />
+          <ScalarProperty Name="ComNameF" ColumnName="ComNameF" />
+          <ScalarProperty Name="ComSName" ColumnName="ComSName" />
+          <ScalarProperty Name="ComLogo" ColumnName="ComLogo" />
+          <ScalarProperty Name="ComLegalPerson" ColumnName="ComLegalPerson" />
+          <ScalarProperty Name="ComContactPerson" ColumnName="ComContactPerson" />
+          <ScalarProperty Name="ComPhone" ColumnName="ComPhone" />
+          <ScalarProperty Name="ComTelPhone" ColumnName="ComTelPhone" />
+          <ScalarProperty Name="ComEmail" ColumnName="ComEmail" />
+          <ScalarProperty Name="ComAddress" ColumnName="ComAddress" />
+          <ScalarProperty Name="ComBarcodeType" ColumnName="ComBarcodeType" />
+          <ScalarProperty Name="ComStatus" ColumnName="ComStatus" />
+          <ScalarProperty Name="ComRemark" ColumnName="ComRemark" />
+          <ScalarProperty Name="ComSubRemark" ColumnName="ComSubRemark" />
+          <ScalarProperty Name="ComAddUserName" ColumnName="ComAddUserName" />
+          <ScalarProperty Name="ComAddTime" ColumnName="ComAddTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DataDictionary">
+      <EntityTypeMapping TypeName="NetTemplateModel.DataDictionary">
+        <MappingFragment StoreEntitySet="DataDictionary">
+          <ScalarProperty Name="DataDictionaryID" ColumnName="DataDictionaryID" />
+          <ScalarProperty Name="DictionaryGroupID" ColumnName="DictionaryGroupID" />
+          <ScalarProperty Name="DataTableName" ColumnName="DataTableName" />
+          <ScalarProperty Name="DictionaryCode" ColumnName="DictionaryCode" />
+          <ScalarProperty Name="DictionaryName" ColumnName="DictionaryName" />
+          <ScalarProperty Name="DictinaryCodeDIY" ColumnName="DictinaryCodeDIY" />
+          <ScalarProperty Name="DictionaryRank" ColumnName="DictionaryRank" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Department">
+      <EntityTypeMapping TypeName="NetTemplateModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="DepartmentNo" ColumnName="DepartmentNo" />
+          <ScalarProperty Name="ParDepartmentID" ColumnName="ParDepartmentID" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="DepartmentUsername" ColumnName="DepartmentUsername" />
+          <ScalarProperty Name="DepartmentTel" ColumnName="DepartmentTel" />
+          <ScalarProperty Name="DepartmentFax" ColumnName="DepartmentFax" />
+          <ScalarProperty Name="DepartmentStatus" ColumnName="DepartmentStatus" />
+          <ScalarProperty Name="DepartmentRemark" ColumnName="DepartmentRemark" />
+          <ScalarProperty Name="DepartmentArray" ColumnName="DepartmentArray" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DictionaryGroup">
+      <EntityTypeMapping TypeName="NetTemplateModel.DictionaryGroup">
+        <MappingFragment StoreEntitySet="DictionaryGroup">
+          <ScalarProperty Name="DictionaryGroupID" ColumnName="DictionaryGroupID" />
+          <ScalarProperty Name="DictionaryGroupName" ColumnName="DictionaryGroupName" />
+          <ScalarProperty Name="DictionaryGroupRemark" ColumnName="DictionaryGroupRemark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailHistory">
+      <EntityTypeMapping TypeName="NetTemplateModel.EmailHistory">
+        <MappingFragment StoreEntitySet="EmailHistory">
+          <ScalarProperty Name="EmailHistoryID" ColumnName="EmailHistoryID" />
+          <ScalarProperty Name="EmailTitle" ColumnName="EmailTitle" />
+          <ScalarProperty Name="EmailUserID" ColumnName="EmailUserID" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="SEMTemplateID" ColumnName="SEMTemplateID" />
+          <ScalarProperty Name="EmailContent" ColumnName="EmailContent" />
+          <ScalarProperty Name="EmailSendStatus" ColumnName="EmailSendStatus" />
+          <ScalarProperty Name="EmailSendTime" ColumnName="EmailSendTime" />
+          <ScalarProperty Name="EmailRemarks" ColumnName="EmailRemarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GouConfig">
+      <EntityTypeMapping TypeName="NetTemplateModel.GouConfig">
+        <MappingFragment StoreEntitySet="GouConfig">
+          <ScalarProperty Name="GCID" ColumnName="GCID" />
+          <ScalarProperty Name="GAgentID" ColumnName="GAgentID" />
+          <ScalarProperty Name="GAdminUserID" ColumnName="GAdminUserID" />
+          <ScalarProperty Name="GAdminUserNo" ColumnName="GAdminUserNo" />
+          <ScalarProperty Name="GID" ColumnName="GID" />
+          <ScalarProperty Name="GStatus" ColumnName="GStatus" />
+          <ScalarProperty Name="GAddTime" ColumnName="GAddTime" />
+          <ScalarProperty Name="GAddUserName" ColumnName="GAddUserName" />
+          <ScalarProperty Name="GRemark" ColumnName="GRemark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupClient">
+      <EntityTypeMapping TypeName="NetTemplateModel.GroupClient">
+        <MappingFragment StoreEntitySet="GroupClient">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="GroupDes" ColumnName="GroupDes" />
+          <ScalarProperty Name="ClientIds" ColumnName="ClientIds" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Log4">
+      <EntityTypeMapping TypeName="NetTemplateModel.Log4">
+        <MappingFragment StoreEntitySet="Log4">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="AddThread" ColumnName="AddThread" />
+          <ScalarProperty Name="AddLevel" ColumnName="AddLevel" />
+          <ScalarProperty Name="Logger" ColumnName="Logger" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Province">
+      <EntityTypeMapping TypeName="NetTemplateModel.Province">
+        <MappingFragment StoreEntitySet="Province">
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="ProName" ColumnName="ProName" />
+          <ScalarProperty Name="ProNameA" ColumnName="ProNameA" />
+          <ScalarProperty Name="ProNameF" ColumnName="ProNameF" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEMTemp">
+      <EntityTypeMapping TypeName="NetTemplateModel.SEMTemp">
+        <MappingFragment StoreEntitySet="SEMTemp">
+          <ScalarProperty Name="SEMTempID" ColumnName="SEMTempID" />
+          <ScalarProperty Name="SEMTempTitle" ColumnName="SEMTempTitle" />
+          <ScalarProperty Name="SMSTemplate" ColumnName="SMSTemplate" />
+          <ScalarProperty Name="EmailTemplate" ColumnName="EmailTemplate" />
+          <ScalarProperty Name="SEMIsSystem" ColumnName="SEMIsSystem" />
+          <ScalarProperty Name="MessageTemplate" ColumnName="MessageTemplate" />
+          <ScalarProperty Name="SEMCode" ColumnName="SEMCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SendEmailQueue">
+      <EntityTypeMapping TypeName="NetTemplateModel.SendEmailQueue">
+        <MappingFragment StoreEntitySet="SendEmailQueue">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="ClientEmail" ColumnName="ClientEmail" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="QueueType" ColumnName="QueueType" />
+          <ScalarProperty Name="SendDate" ColumnName="SendDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMSHistory">
+      <EntityTypeMapping TypeName="NetTemplateModel.SMSHistory">
+        <MappingFragment StoreEntitySet="SMSHistory">
+          <ScalarProperty Name="SMSHistoryID" ColumnName="SMSHistoryID" />
+          <ScalarProperty Name="SMSTitle" ColumnName="SMSTitle" />
+          <ScalarProperty Name="SMSUserID" ColumnName="SMSUserID" />
+          <ScalarProperty Name="SMSTelNo" ColumnName="SMSTelNo" />
+          <ScalarProperty Name="SEMTemplateID" ColumnName="SEMTemplateID" />
+          <ScalarProperty Name="SMSContent" ColumnName="SMSContent" />
+          <ScalarProperty Name="SMSSendStatus" ColumnName="SMSSendStatus" />
+          <ScalarProperty Name="SMSSendTime" ColumnName="SMSSendTime" />
+          <ScalarProperty Name="SMSTypeID" ColumnName="SMSTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WeiXinHis">
+      <EntityTypeMapping TypeName="NetTemplateModel.WeiXinHis">
+        <MappingFragment StoreEntitySet="WeiXinHis">
+          <ScalarProperty Name="WXID" ColumnName="WXID" />
+          <ScalarProperty Name="WXRandNo" ColumnName="WXRandNo" />
+          <ScalarProperty Name="WXAgentID" ColumnName="WXAgentID" />
+          <ScalarProperty Name="WXSendUserName" ColumnName="WXSendUserName" />
+          <ScalarProperty Name="WXRecUserName" ColumnName="WXRecUserName" />
+          <ScalarProperty Name="WXRecOpenID" ColumnName="WXRecOpenID" />
+          <ScalarProperty Name="WXStatus" ColumnName="WXStatus" />
+          <ScalarProperty Name="WXAddTime" ColumnName="WXAddTime" />
+          <ScalarProperty Name="WXDetail" ColumnName="WXDetail" />
+          <ScalarProperty Name="WXRemark" ColumnName="WXRemark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WeiXinRec">
+      <EntityTypeMapping TypeName="NetTemplateModel.WeiXinRec">
+        <MappingFragment StoreEntitySet="WeiXinRec">
+          <ScalarProperty Name="WXRID" ColumnName="WXRID" />
+          <ScalarProperty Name="WXRAgentID" ColumnName="WXRAgentID" />
+          <ScalarProperty Name="WXRUserID" ColumnName="WXRUserID" />
+          <ScalarProperty Name="WXRStatus" ColumnName="WXRStatus" />
+          <ScalarProperty Name="WXRType" ColumnName="WXRType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

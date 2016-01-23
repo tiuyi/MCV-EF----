@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JDF.Finance.Common
+namespace XG.Temp.Common
 {
     #region 通用除去重复数据类
     /// <summary>

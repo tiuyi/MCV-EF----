@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Xml.Linq;
 
-namespace JDF.Finance.Common
+namespace XG.Temp.Common
 {
     public class ApiUrls
     {

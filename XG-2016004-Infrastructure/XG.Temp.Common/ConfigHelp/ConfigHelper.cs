@@ -2,7 +2,7 @@ using System;
 using System.Configuration;
 using System.Web;
 
-namespace JDF.Finance.Common
+namespace XG.Temp.Common
 {
     /// <summary>
     /// web.config²Ù×÷Àà

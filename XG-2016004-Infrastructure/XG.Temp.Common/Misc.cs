@@ -18,7 +18,7 @@ using System.Xml.Serialization;
 using System.Xml;
 using System.Text;
 
-namespace JDF.Finance.Common
+namespace XG.Temp.Common
 {
     /// <summary>
     /// Summary description for Misc

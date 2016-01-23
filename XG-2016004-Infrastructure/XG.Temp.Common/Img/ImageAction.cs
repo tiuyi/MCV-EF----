@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 using System.IO;
 using System.Drawing.Imaging;
 using System.Drawing.Text;
-namespace JDF.ERP.Common
+namespace XG.Temp.Common
 {
     /// <summary>
     /// Summary description for ImageAction

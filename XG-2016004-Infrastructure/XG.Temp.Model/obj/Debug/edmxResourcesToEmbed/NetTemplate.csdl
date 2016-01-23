@@ -1,0 +1,580 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NetTemplateModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AdminAction">
+    <Key>
+      <PropertyRef Name="AdminActionID" />
+    </Key>
+    <Property Name="AdminActionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdminActionName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AdminActionTag" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AdminActionImgSrc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AdminActionColor" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="AdminActionRemark" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AdminActionRank" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdminLoginLog">
+    <Key>
+      <PropertyRef Name="AdminLoginLogID" />
+    </Key>
+    <Property Name="AdminLoginLogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LoginUserID" Type="Int32" Nullable="false" />
+    <Property Name="LoginDepartID" Type="Int32" Nullable="false" />
+    <Property Name="LoginRoleID" Type="Int32" Nullable="false" />
+    <Property Name="LoginUserName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoginDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LoginIP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdminPage">
+    <Key>
+      <PropertyRef Name="AdminPageID" />
+    </Key>
+    <Property Name="AdminPageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdminPageTitle" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AdminPageURL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AdminPageParentID" Type="Int32" Nullable="false" />
+    <Property Name="AdminPageRemark" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AdminPageRank" Type="Int32" Nullable="false" />
+    <Property Name="AdminPageIsVisible" Type="Int32" Nullable="false" />
+    <Property Name="AdminPageIsLock" Type="Int32" Nullable="false" />
+    <Property Name="AdminPageImgSrc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AdminPageColor" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AdminPageAuth" Relationship="NetTemplateModel.FK_AdminPageAuth_AdminPageAuth" FromRole="AdminPage" ToRole="AdminPageAuth" />
+    <NavigationProperty Name="AdminRoleAuth" Relationship="NetTemplateModel.FK_AdminRoleAuth_AdminPage" FromRole="AdminPage" ToRole="AdminRoleAuth" />
+    <NavigationProperty Name="AdminUserAuth" Relationship="NetTemplateModel.FK_AdminUserAuth_AdminPage" FromRole="AdminPage" ToRole="AdminUserAuth" />
+  </EntityType>
+  <EntityType Name="AdminPageAuth">
+    <Key>
+      <PropertyRef Name="AdminPageAuthID" />
+    </Key>
+    <Property Name="AdminPageAuthID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdminPageID" Type="Int32" Nullable="false" />
+    <Property Name="AdminPageRelID" Type="Int32" Nullable="false" />
+    <Property Name="AdminPageRelType" Type="Int32" Nullable="false" />
+    <Property Name="AdminPageDicType" Type="Int32" Nullable="false" />
+    <Property Name="AdminPageAuthIsLock" Type="Boolean" Nullable="false" />
+    <Property Name="AdminPageAuthRank" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AdminPage" Relationship="NetTemplateModel.FK_AdminPageAuth_AdminPageAuth" FromRole="AdminPageAuth" ToRole="AdminPage" />
+  </EntityType>
+  <EntityType Name="AdminRole">
+    <Key>
+      <PropertyRef Name="AdminRoleID" />
+    </Key>
+    <Property Name="AdminRoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+    <Property Name="AdminRoleName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AdminRoleAuth" Relationship="NetTemplateModel.FK_AdminRoleAuth_AdminRole" FromRole="AdminRole" ToRole="AdminRoleAuth" />
+  </EntityType>
+  <EntityType Name="AdminRoleAuth">
+    <Key>
+      <PropertyRef Name="AdminRoleAuthID" />
+    </Key>
+    <Property Name="AdminRoleAuthID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdminRoleID" Type="Int32" Nullable="false" />
+    <Property Name="AdminPageID" Type="Int32" Nullable="false" />
+    <Property Name="AdminRoleRelID" Type="Int32" Nullable="false" />
+    <Property Name="AdminRoleRelType" Type="Int32" Nullable="false" />
+    <Property Name="AdminRoleDicType" Type="Int32" />
+    <NavigationProperty Name="AdminPage" Relationship="NetTemplateModel.FK_AdminRoleAuth_AdminPage" FromRole="AdminRoleAuth" ToRole="AdminPage" />
+    <NavigationProperty Name="AdminRole" Relationship="NetTemplateModel.FK_AdminRoleAuth_AdminRole" FromRole="AdminRoleAuth" ToRole="AdminRole" />
+  </EntityType>
+  <EntityType Name="AdminUser">
+    <Key>
+      <PropertyRef Name="AdminUserID" />
+    </Key>
+    <Property Name="AdminUserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdminUserName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AdminUserNameA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AdminUserNameF" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="AdminUserNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AdminUserPass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AgentID" Type="Int32" Nullable="false" />
+    <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+    <Property Name="AdminRoleID" Type="Int32" Nullable="false" />
+    <Property Name="AdminUserStatus" Type="Int32" Nullable="false" />
+    <Property Name="AdminUserType" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AdminUserAuth" Relationship="NetTemplateModel.FK_AdminUserAuth_AdminUser" FromRole="AdminUser" ToRole="AdminUserAuth" />
+    <NavigationProperty Name="AdminUserDetail" Relationship="NetTemplateModel.FK_AdminUserDetail_AdminUser" FromRole="AdminUser" ToRole="AdminUserDetail" />
+  </EntityType>
+  <EntityType Name="AdminUserAuth">
+    <Key>
+      <PropertyRef Name="AdminUserAuthID" />
+    </Key>
+    <Property Name="AdminUserAuthID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdminUserID" Type="Int32" Nullable="false" />
+    <Property Name="AdminPageID" Type="Int32" Nullable="false" />
+    <Property Name="AdminUserAuthRelID" Type="Int32" Nullable="false" />
+    <Property Name="AdminUserAuthRelType" Type="Int32" Nullable="false" />
+    <Property Name="AdminUserDicType" Type="Int32" Nullable="false" />
+    <Property Name="AdminUserAuthRank" Type="Int32" />
+    <Property Name="AdminUserAutFiexd" Type="Int32" />
+    <NavigationProperty Name="AdminPage" Relationship="NetTemplateModel.FK_AdminUserAuth_AdminPage" FromRole="AdminUserAuth" ToRole="AdminPage" />
+    <NavigationProperty Name="AdminUser" Relationship="NetTemplateModel.FK_AdminUserAuth_AdminUser" FromRole="AdminUserAuth" ToRole="AdminUser" />
+  </EntityType>
+  <EntityType Name="AdminUserDetail">
+    <Key>
+      <PropertyRef Name="AdminUserID" />
+    </Key>
+    <Property Name="AdminUserDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdminUserID" Type="Int32" Nullable="false" />
+    <Property Name="AdminUseTel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="AdminUseEmail" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="AdminUserAddTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AdminDisGroupID" Type="Int32" Nullable="false" />
+    <Property Name="WeiXinHao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WeiXinOpenID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AdminUser" Relationship="NetTemplateModel.FK_AdminUserDetail_AdminUser" FromRole="AdminUserDetail" ToRole="AdminUser" />
+  </EntityType>
+  <EntityType Name="Agent">
+    <Key>
+      <PropertyRef Name="AgentID" />
+    </Key>
+    <Property Name="AgentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AgentNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AgentBigArea" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="AgentProvID" Type="Int32" Nullable="false" />
+    <Property Name="AgentCityID" Type="Int32" Nullable="false" />
+    <Property Name="AgentName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AgentNameA" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AgentNameF" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AgentTypeCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AgentIsUserJiamiGou" Type="Int32" Nullable="false" />
+    <Property Name="AgentJiaMiGouID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="AgentParentID" Type="Int32" />
+    <Property Name="AgentIsUsedSMS" Type="Int32" />
+    <Property Name="AgentIsSet" Type="Int32" />
+    <Property Name="AgentIntType" Type="Int32" />
+    <Property Name="AgentTeamBoss" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="AgentIsDel" Type="Int32" Nullable="false" />
+    <Property Name="AgentStatus" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AgentDetail" Relationship="NetTemplateModel.FK_AgentDetail_Agent" FromRole="Agent" ToRole="AgentDetail" />
+  </EntityType>
+  <EntityType Name="AgentCustDetail">
+    <Key>
+      <PropertyRef Name="AgentCustDetailID" />
+    </Key>
+    <Property Name="AgentCustDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AgentCustTypeID" Type="Int32" Nullable="false" />
+    <Property Name="AgentID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AgentCustType">
+    <Key>
+      <PropertyRef Name="AgentCustTypeID" />
+    </Key>
+    <Property Name="AgentCustTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AgentCusTypeName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AgentCusCreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AdminUserID" Type="Int32" Nullable="false" />
+    <Property Name="DepartmentID" Type="Int32" />
+    <Property Name="AdminRoleID" Type="Int32" />
+    <Property Name="AgentCompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AgentCustUserType" Type="Int32" />
+    <Property Name="AgentReamrk" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AgentDetail">
+    <Key>
+      <PropertyRef Name="ADAgentID" />
+    </Key>
+    <Property Name="AgentDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ADAgentID" Type="Int32" Nullable="false" />
+    <Property Name="AgentAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AgentMailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AgentLinkMan" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="AgentTelPhone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="AgentEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AgentPhone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="AgentFax" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="AgentPostCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AgentUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AgentUpdateTime" Type="DateTime" Precision="3" />
+    <Property Name="AgentIDCard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AgentRemark" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AgentEndTime" Type="DateTime" Precision="3" />
+    <Property Name="AgentEndName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AgentAddName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AgentAddTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AgentVerifyTime" Type="DateTime" Precision="3" />
+    <Property Name="AgentVerifyName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AgentVerifyNote" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AgentIsAutoSend" Type="Boolean" />
+    <Property Name="AgentSendTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Agent" Relationship="NetTemplateModel.FK_AgentDetail_Agent" FromRole="AgentDetail" ToRole="Agent" />
+  </EntityType>
+  <EntityType Name="AgentType">
+    <Key>
+      <PropertyRef Name="AgentTypeID" />
+    </Key>
+    <Property Name="AgentTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AgentTypeName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AgentTypeCreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AgentTypeCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="AreaID" />
+    </Key>
+    <Property Name="AreaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AreaName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AreaNameF" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AreaNameA" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AttachFile">
+    <Key>
+      <PropertyRef Name="AFID" />
+    </Key>
+    <Property Name="AFID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AFObject" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AFSort" Type="Int32" Nullable="false" />
+    <Property Name="AFNewName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AFName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AFRank" Type="Int32" Nullable="false" />
+    <Property Name="AFIsMain" Type="Int32" Nullable="false" />
+    <Property Name="AFIsShow" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bulletin">
+    <Key>
+      <PropertyRef Name="BulletinID" />
+    </Key>
+    <Property Name="BulletinID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BullAddUserDepartID" Type="Int32" Nullable="false" />
+    <Property Name="BullAddUserRoleID" Type="Int32" Nullable="false" />
+    <Property Name="BullAddUserID" Type="Int32" Nullable="false" />
+    <Property Name="BullAddTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BullTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BullDes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CityNameF" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CityNameA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProvinceID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="ComID" />
+    </Key>
+    <Property Name="ComID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ComName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ComNameA" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="ComNameF" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ComSName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ComLogo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ComLegalPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ComContactPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ComPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ComTelPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ComEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ComAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ComBarcodeType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ComStatus" Type="Int32" Nullable="false" />
+    <Property Name="ComRemark" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="ComSubRemark" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="ComAddUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ComAddTime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="DataDictionary">
+    <Key>
+      <PropertyRef Name="DataDictionaryID" />
+    </Key>
+    <Property Name="DataDictionaryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DictionaryGroupID" Type="Int32" Nullable="false" />
+    <Property Name="DataTableName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DictionaryCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DictionaryName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DictinaryCodeDIY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DictionaryRank" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ParDepartmentID" Type="Int32" Nullable="false" />
+    <Property Name="DepartmentName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DepartmentUsername" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DepartmentTel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DepartmentFax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DepartmentStatus" Type="Int32" Nullable="false" />
+    <Property Name="DepartmentRemark" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DepartmentArray" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DictionaryGroup">
+    <Key>
+      <PropertyRef Name="DictionaryGroupID" />
+    </Key>
+    <Property Name="DictionaryGroupID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DictionaryGroupName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DictionaryGroupRemark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmailHistory">
+    <Key>
+      <PropertyRef Name="EmailHistoryID" />
+    </Key>
+    <Property Name="EmailHistoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmailTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmailUserID" Type="Int32" Nullable="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SEMTemplateID" Type="Int32" Nullable="false" />
+    <Property Name="EmailContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmailSendStatus" Type="Int32" Nullable="false" />
+    <Property Name="EmailSendTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EmailRemarks" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GouConfig">
+    <Key>
+      <PropertyRef Name="GCID" />
+    </Key>
+    <Property Name="GCID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GAgentID" Type="Int32" Nullable="false" />
+    <Property Name="GAdminUserID" Type="Int32" Nullable="false" />
+    <Property Name="GAdminUserNo" Type="Int32" Nullable="false" />
+    <Property Name="GID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GStatus" Type="Int32" Nullable="false" />
+    <Property Name="GAddTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="GAddUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GRemark" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GroupClient">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ObjectType" Type="Int32" />
+    <Property Name="GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GroupDes" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ClientIds" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Log4">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AddDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AddThread" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AddLevel" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Logger" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Message" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="ProvinceID" />
+    </Key>
+    <Property Name="ProvinceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProNameA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProNameF" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SEMTemp">
+    <Key>
+      <PropertyRef Name="SEMTempID" />
+    </Key>
+    <Property Name="SEMTempID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SEMTempTitle" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SMSTemplate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EmailTemplate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SEMIsSystem" Type="Int32" Nullable="false" />
+    <Property Name="MessageTemplate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SEMCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SendEmailQueue">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClientID" Type="Int32" />
+    <Property Name="ClientEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="Int32" />
+    <Property Name="QueueType" Type="Int32" />
+    <Property Name="SendDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SMSHistory">
+    <Key>
+      <PropertyRef Name="SMSHistoryID" />
+    </Key>
+    <Property Name="SMSHistoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SMSTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SMSUserID" Type="Int32" Nullable="false" />
+    <Property Name="SMSTelNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SEMTemplateID" Type="Int32" Nullable="false" />
+    <Property Name="SMSContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SMSSendStatus" Type="Int32" Nullable="false" />
+    <Property Name="SMSSendTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SMSTypeID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="WeiXinHis">
+    <Key>
+      <PropertyRef Name="WXID" />
+    </Key>
+    <Property Name="WXID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WXRandNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WXAgentID" Type="Int32" Nullable="false" />
+    <Property Name="WXSendUserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WXRecUserName" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WXRecOpenID" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="WXStatus" Type="Int32" Nullable="false" />
+    <Property Name="WXAddTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="WXDetail" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WXRemark" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WeiXinRec">
+    <Key>
+      <PropertyRef Name="WXRID" />
+    </Key>
+    <Property Name="WXRID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WXRAgentID" Type="Int32" Nullable="false" />
+    <Property Name="WXRUserID" Type="Int32" Nullable="false" />
+    <Property Name="WXRStatus" Type="Int32" Nullable="false" />
+    <Property Name="WXRType" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="NetTemplateEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AdminAction" EntityType="Self.AdminAction" />
+    <EntitySet Name="AdminLoginLog" EntityType="Self.AdminLoginLog" />
+    <EntitySet Name="AdminPage" EntityType="Self.AdminPage" />
+    <EntitySet Name="AdminPageAuth" EntityType="Self.AdminPageAuth" />
+    <EntitySet Name="AdminRole" EntityType="Self.AdminRole" />
+    <EntitySet Name="AdminRoleAuth" EntityType="Self.AdminRoleAuth" />
+    <EntitySet Name="AdminUser" EntityType="Self.AdminUser" />
+    <EntitySet Name="AdminUserAuth" EntityType="Self.AdminUserAuth" />
+    <EntitySet Name="AdminUserDetail" EntityType="Self.AdminUserDetail" />
+    <EntitySet Name="Agent" EntityType="Self.Agent" />
+    <EntitySet Name="AgentCustDetail" EntityType="Self.AgentCustDetail" />
+    <EntitySet Name="AgentCustType" EntityType="Self.AgentCustType" />
+    <EntitySet Name="AgentDetail" EntityType="Self.AgentDetail" />
+    <EntitySet Name="AgentType" EntityType="Self.AgentType" />
+    <EntitySet Name="Area" EntityType="Self.Area" />
+    <EntitySet Name="AttachFile" EntityType="Self.AttachFile" />
+    <EntitySet Name="Bulletin" EntityType="Self.Bulletin" />
+    <EntitySet Name="City" EntityType="Self.City" />
+    <EntitySet Name="Company" EntityType="Self.Company" />
+    <EntitySet Name="DataDictionary" EntityType="Self.DataDictionary" />
+    <EntitySet Name="Department" EntityType="Self.Department" />
+    <EntitySet Name="DictionaryGroup" EntityType="Self.DictionaryGroup" />
+    <EntitySet Name="EmailHistory" EntityType="Self.EmailHistory" />
+    <EntitySet Name="GouConfig" EntityType="Self.GouConfig" />
+    <EntitySet Name="GroupClient" EntityType="Self.GroupClient" />
+    <EntitySet Name="Log4" EntityType="Self.Log4" />
+    <EntitySet Name="Province" EntityType="Self.Province" />
+    <EntitySet Name="SEMTemp" EntityType="Self.SEMTemp" />
+    <EntitySet Name="SendEmailQueue" EntityType="Self.SendEmailQueue" />
+    <EntitySet Name="SMSHistory" EntityType="Self.SMSHistory" />
+    <EntitySet Name="WeiXinHis" EntityType="Self.WeiXinHis" />
+    <EntitySet Name="WeiXinRec" EntityType="Self.WeiXinRec" />
+    <AssociationSet Name="FK_AdminPageAuth_AdminPageAuth" Association="NetTemplateModel.FK_AdminPageAuth_AdminPageAuth">
+      <End Role="AdminPage" EntitySet="AdminPage" />
+      <End Role="AdminPageAuth" EntitySet="AdminPageAuth" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdminRoleAuth_AdminPage" Association="NetTemplateModel.FK_AdminRoleAuth_AdminPage">
+      <End Role="AdminPage" EntitySet="AdminPage" />
+      <End Role="AdminRoleAuth" EntitySet="AdminRoleAuth" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdminUserAuth_AdminPage" Association="NetTemplateModel.FK_AdminUserAuth_AdminPage">
+      <End Role="AdminPage" EntitySet="AdminPage" />
+      <End Role="AdminUserAuth" EntitySet="AdminUserAuth" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdminRoleAuth_AdminRole" Association="NetTemplateModel.FK_AdminRoleAuth_AdminRole">
+      <End Role="AdminRole" EntitySet="AdminRole" />
+      <End Role="AdminRoleAuth" EntitySet="AdminRoleAuth" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdminUserAuth_AdminUser" Association="NetTemplateModel.FK_AdminUserAuth_AdminUser">
+      <End Role="AdminUser" EntitySet="AdminUser" />
+      <End Role="AdminUserAuth" EntitySet="AdminUserAuth" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdminUserDetail_AdminUser" Association="NetTemplateModel.FK_AdminUserDetail_AdminUser">
+      <End Role="AdminUser" EntitySet="AdminUser" />
+      <End Role="AdminUserDetail" EntitySet="AdminUserDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AgentDetail_Agent" Association="NetTemplateModel.FK_AgentDetail_Agent">
+      <End Role="Agent" EntitySet="Agent" />
+      <End Role="AgentDetail" EntitySet="AgentDetail" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_AdminPageAuth_AdminPageAuth">
+    <End Type="NetTemplateModel.AdminPage" Role="AdminPage" Multiplicity="1" />
+    <End Type="NetTemplateModel.AdminPageAuth" Role="AdminPageAuth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdminPage">
+        <PropertyRef Name="AdminPageID" />
+      </Principal>
+      <Dependent Role="AdminPageAuth">
+        <PropertyRef Name="AdminPageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdminRoleAuth_AdminPage">
+    <End Type="NetTemplateModel.AdminPage" Role="AdminPage" Multiplicity="1" />
+    <End Type="NetTemplateModel.AdminRoleAuth" Role="AdminRoleAuth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdminPage">
+        <PropertyRef Name="AdminPageID" />
+      </Principal>
+      <Dependent Role="AdminRoleAuth">
+        <PropertyRef Name="AdminPageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdminUserAuth_AdminPage">
+    <End Type="NetTemplateModel.AdminPage" Role="AdminPage" Multiplicity="1" />
+    <End Type="NetTemplateModel.AdminUserAuth" Role="AdminUserAuth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdminPage">
+        <PropertyRef Name="AdminPageID" />
+      </Principal>
+      <Dependent Role="AdminUserAuth">
+        <PropertyRef Name="AdminPageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdminRoleAuth_AdminRole">
+    <End Type="NetTemplateModel.AdminRole" Role="AdminRole" Multiplicity="1" />
+    <End Type="NetTemplateModel.AdminRoleAuth" Role="AdminRoleAuth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdminRole">
+        <PropertyRef Name="AdminRoleID" />
+      </Principal>
+      <Dependent Role="AdminRoleAuth">
+        <PropertyRef Name="AdminRoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdminUserAuth_AdminUser">
+    <End Type="NetTemplateModel.AdminUser" Role="AdminUser" Multiplicity="1" />
+    <End Type="NetTemplateModel.AdminUserAuth" Role="AdminUserAuth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdminUser">
+        <PropertyRef Name="AdminUserID" />
+      </Principal>
+      <Dependent Role="AdminUserAuth">
+        <PropertyRef Name="AdminUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdminUserDetail_AdminUser">
+    <End Type="NetTemplateModel.AdminUser" Role="AdminUser" Multiplicity="1" />
+    <End Type="NetTemplateModel.AdminUserDetail" Role="AdminUserDetail" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="AdminUser">
+        <PropertyRef Name="AdminUserID" />
+      </Principal>
+      <Dependent Role="AdminUserDetail">
+        <PropertyRef Name="AdminUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AgentDetail_Agent">
+    <End Type="NetTemplateModel.Agent" Role="Agent" Multiplicity="1" />
+    <End Type="NetTemplateModel.AgentDetail" Role="AgentDetail" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Agent">
+        <PropertyRef Name="AgentID" />
+      </Principal>
+      <Dependent Role="AgentDetail">
+        <PropertyRef Name="ADAgentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -7,8 +7,8 @@
     <ProjectGuid>{E87C73F7-8E47-42D8-A213-23EDB831D39E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XG_Temp_Services</RootNamespace>
-    <AssemblyName>XG-Temp-Services</AssemblyName>
+    <RootNamespace>XG.Temp.Services</RootNamespace>
+    <AssemblyName>XG.Temp.Services</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,6 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqKit, Version=1.1.2.0, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\LinqKit.1.1.2\lib\net45\LinqKit.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,8 +49,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BaseServices.cs" />
+    <Compile Include="BLLSession.cs" />
+    <Compile Include="BLLSessionExtension.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BLLSessionExtension.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExtensionServices\FinaProjectServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Services.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\XG-2016003-Respositry\XG-Temp-IRespositry\XG.Temp.IRespositry.csproj">
@@ -63,6 +85,20 @@
       <Project>{a9331129-7093-4929-a50a-ac04d5709a48}</Project>
       <Name>XG.Temp.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="BLLSessionExtension.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BLLSessionExtension.cs</LastGenOutput>
+    </None>
+    <None Include="Services.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Services.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

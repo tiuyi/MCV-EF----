@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 
-namespace JDF.Finance.Common
+namespace XG.Temp.Common
 {
     /// <summary>
     /// Summary description for Log
